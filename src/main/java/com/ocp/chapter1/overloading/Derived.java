@@ -5,11 +5,12 @@ package com.ocp.chapter1.overloading;
  */
 public class Derived extends Base {
 
-    public int method(Base a) {
+    @Override
+    protected int method(Base a) {
         return 3;
     }
 
-    public int method(Derived ax) {
+    private int method(Derived ax) {
         return 4;
     }
 

@@ -5,11 +5,11 @@ package com.ocp.chapter1.overloading;
  */
 public class Base {
 
-    public int method(Object o) {
+    int method(Object o) {
         return 1;
     }
 
-    public int method(Base a) {
+    int method(Base a) {
         return 2;
     }
 }

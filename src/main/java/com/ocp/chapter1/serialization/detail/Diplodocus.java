@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class Diplodocus implements Serializable {
 
-    private static final transient Logger LOG = LoggerFactory.getLogger(Diplodocus
+    private final transient Logger LOG = LoggerFactory.getLogger(Diplodocus
             .class);
 
     private final transient String s1 = "test";
@@ -58,7 +58,7 @@ public class Diplodocus implements Serializable {
             System.out.println("i2 = " + diplo.i2);
             System.out.println("i3 = " + diplo.i3);
             System.out.println("a1 = " + diplo.a1);
-            System.out.println(Objects.isNull(diplo.LOG));
+            System.out.println("is LOG NULL = " + Objects.isNull(diplo.LOG));
 
         } catch (IOException e) {
             e.printStackTrace();

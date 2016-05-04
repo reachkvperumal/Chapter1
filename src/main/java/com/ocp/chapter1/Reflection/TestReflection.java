@@ -41,6 +41,8 @@ public class TestReflection {
             assertEquals(10, instance.getValue());
             assertEquals(ClassWithExpensiveConstructor.class, instance.getClass());
             assertEquals(Object.class, instance.getClass().getSuperclass());
+            System.out.println("SUCCESS");
+
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -48,6 +50,7 @@ public class TestReflection {
     }
 
     public static void main(String[] args) {
-        copy();
+        //  copy();
+        testStrangeReflectionFactory();
     }
 }
