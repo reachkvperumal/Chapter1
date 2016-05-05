@@ -6,7 +6,7 @@ package com.ocp.chapter1.overloading;
 public class Derived extends Base {
 
     @Override
-    protected int method(Base a) {
+    final protected int method(Base a) {
         return 3;
     }
 

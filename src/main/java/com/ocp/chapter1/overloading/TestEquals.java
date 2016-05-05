@@ -11,5 +11,11 @@ public class TestEquals {
 
         System.out.println(Integer.valueOf(5) == Integer.valueOf(5));
         System.out.println(Integer.valueOf(500) == Integer.valueOf(500));
+
+
+        BaseVariable obj = new DerivedVariable();
+        obj.showName();
+        System.out.println(obj.name);
+
     }
 }
