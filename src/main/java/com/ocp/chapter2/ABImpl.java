@@ -5,6 +5,13 @@ package com.ocp.chapter2;
  */
 public class ABImpl implements A, B {
 
+
+    @Override
+    public void show1() {
+        B.super.show();
+    }
+
+    @Override
     public void show() {
         B.super.show();
     }
@@ -12,5 +19,6 @@ public class ABImpl implements A, B {
     public static void main(String... args) {
         A a = new ABImpl();
         a.show();
+        B.print();
     }
 }

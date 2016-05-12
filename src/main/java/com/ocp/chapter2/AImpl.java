@@ -6,5 +6,12 @@ package com.ocp.chapter2;
 public class AImpl implements A {
     public static void main(String... args) {
         new AImpl().show();
+        A.print();
+    }
+
+    @Override
+    public void show1() {
+        A.super.show();
+        System.out.println("FROM CLASS");
     }
 }
