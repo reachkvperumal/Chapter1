@@ -13,7 +13,7 @@ public class Test {
         try {
             ObjectOutputStream o = new ObjectOutputStream(
                     new FileOutputStream("logInfo.out"));
-            X a = new X();
+            Y a = new Y("KV");
             System.out.println("Before Serialization ...");
             System.out.println("transientStaticVar = " + X.transientStaticVar);
             System.out.println("transientFinalVar = " + a.transientFinalVar);
@@ -31,13 +31,14 @@ public class Test {
 
             ObjectInputStream in = new ObjectInputStream(
                     new FileInputStream("logInfo.out"));
-            X x = (X) in.readObject();
+            Y x = (Y) in.readObject();
             System.out.println("After Serialization ...");
             System.out.println("transientStaticVar = " + X.transientStaticVar);
             System.out.println("transientFinalVar = " + x.transientFinalVar);
             System.out.println("transientStaticFinalVar = " +
                     X.transientStaticFinalVar);
             System.out.println("transientVar = " + x.transientVar);
+            System.out.println("name = " + x.getName());
         } catch (Exception e) {
             //deal with exception
         }

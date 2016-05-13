@@ -11,6 +11,8 @@ import java.util.Objects;
  */
 public class Diplodocus implements Serializable {
 
+    private static final long serialVersionUID = -8798539336908901074L;
+
     private final transient Logger LOG = LoggerFactory.getLogger(Diplodocus
             .class);
 
