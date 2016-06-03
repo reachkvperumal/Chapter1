@@ -15,6 +15,7 @@ public class InnerTypeOne {
 
     private void getExample() {
         new Example() {
+            private String t1 = "t1";
             @Override
             public void show() {
                 System.out.println(name);
@@ -23,7 +24,7 @@ public class InnerTypeOne {
     }
 
     private final class InnerTypeTwo implements Example {
-        private final String name;
+        private String name = "T1";
 
         private InnerTypeTwo(String name) {
             System.out.println("INNER CLASS CONSTRUCTOR");

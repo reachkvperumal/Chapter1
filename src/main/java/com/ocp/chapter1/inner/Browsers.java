@@ -12,6 +12,7 @@ public class Browsers {
     }
 
     static class FireFox extends Browser {
+
         @Override
         public void go() {
             System.out.println("Inside FireFox");
