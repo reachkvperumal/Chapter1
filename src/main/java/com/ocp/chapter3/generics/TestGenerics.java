@@ -1,6 +1,7 @@
 package com.ocp.chapter3.generics;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -80,6 +81,9 @@ public class TestGenerics {
         return new B();
     }
 
+    private void printNumber(List<Number> numbers) {
+        numbers.forEach(System.out::println);
+    }
 
     //in place of ? you can't have any other character
     void method5(List<? super B> list) {
@@ -92,6 +96,6 @@ public class TestGenerics {
         List<B> list = new ArrayList<>();
         list.add(new B());
         System.out.println(obj.method3(list));
-
+        obj.printNumber(Arrays.<Number>asList(1l, 2l, 3l, 5l, 6l));
     }
 }
