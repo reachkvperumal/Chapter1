@@ -1,7 +1,7 @@
 package com.ocp.chapter3.bigo;
 
 /**
- * Created by KV on 6/22/2016.
+ * Created by KV on 6/22/2016
  */
 public class BigOFactor {
 
