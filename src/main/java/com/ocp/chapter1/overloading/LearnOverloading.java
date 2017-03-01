@@ -5,18 +5,18 @@ package com.ocp.chapter1.overloading;
  */
 public class LearnOverloading {
 
-    private void show(double d) {
+    private void show(double[] d) {
         System.out.println("THIS IS FROM DOUBLE " + d);
     }
 
-    private void show(float f) {
+    private void show(float... f) {
         System.out.println("THIS IS FROM FLOAT " + f);
     }
 
     public static void main(String[] args) {
         LearnOverloading obj = new LearnOverloading();
 
-        obj.show(10);
+        obj.show((float[]) null);
     }
 
 }
