@@ -1,4 +1,4 @@
-package com.gc.tutorial;
+package com.tutorial.gc;
 
 /**
  * Created by KV on 3/21/2017.
