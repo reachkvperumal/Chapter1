@@ -1,6 +1,7 @@
 package com.tutorial.regex;
 
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 /**
  * Created by KV on 3/22/2017.
@@ -8,9 +9,11 @@ import java.util.regex.Pattern;
 public class PhoneNumberValidation {
 
     static void validate() {
-        String phone = "4550001234";
-        String regex = "^((2[0-9][0-9]|3[0-9][0-9]|4[0-9][0-9]|5[0-9][0-9]|6[0-9][0-9]|7[0-9][0-9]|8[0-9][0-9]|9[0-9][0-8])[0-9][0-9][0-9][0-9][0-9][0-9][0-9]){0,10}$";
-        System.out.println(Pattern.compile(regex).matcher(phone).matches());
+        String[] phone = {"2014567890", "", "20145678901", "2014", "1234567890", "20145678902014567802014567890"};
+        String regex = "^((2[0-9][0-9]|3[0-9][0-9]|4[0-9][0-9]|5[0-9][0-9]|6[0-9][0-9]|7[0-9][0-9]|8[0-9][0-9]|9[0-9][0-8])[0-9][0-9][0-9][0-9][0-9][0-9][0-9])?$";
+
+        Stream.of(phone).forEach(t -> System.out.println(Pattern.compile(regex).matcher(t).matches()));
+
     }
 
     public static void main(String[] args) {
