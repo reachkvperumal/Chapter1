@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.function.IntSupplier;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.counting;
@@ -14,6 +16,18 @@ import static java.util.stream.Collectors.groupingBy;
  * Created by KV on 4/6/2017.
  */
 public class LeaningMap {
+
+
+    public static void intStream(){
+        IntStream.generate(new IntSupplier() {
+            int i = 0;
+            @Override
+            public int getAsInt() {
+                i++;
+                return i * i;
+            }
+        }).limit(10).forEach(System.out::println);
+    }
 
     public static void init() {
         Stream<Locale> locales = Stream.of(Locale.getAvailableLocales());
@@ -43,6 +57,8 @@ public class LeaningMap {
         System.out.println(listMap);
         Arrays.stream(Locale.getAvailableLocales()).collect(groupingBy(Locale::getCountry, counting()))
                 .forEach((s, aLong) -> System.out.printf("COUNTRY NAME : %s, COUNT = %d%n", new Locale("", s).getDisplayCountry(), aLong));
+
+        intStream();
     }
 
 }
