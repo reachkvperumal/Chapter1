@@ -32,9 +32,13 @@ public class LeaningMap {
     public static void init() {
         Stream<Locale> locales = Stream.of(Locale.getAvailableLocales());
 
+         /*TEMP COMMIT from */
+
         /*Map<String, String> stringMap = locales.collect(
                 Collectors.toMap(Locale::getDisplayLanguage, l -> l.getDisplayLanguage(l), (o, e) -> e)
         );
+
+
 
         System.out.println("----------------");
         System.out.println(stringMap);
