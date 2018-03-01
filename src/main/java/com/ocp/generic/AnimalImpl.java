@@ -1,4 +1,4 @@
-package com.ocp.Generic;
+package com.ocp.generic;
 
 /**
  * Created by KV on 3/2/2017.
