@@ -17,6 +17,7 @@ public class FixedTest {
             boolean awaitTermination = service.awaitTermination(5L, TimeUnit.SECONDS);
             if (!awaitTermination){
                 service.shutdownNow();
+                System.out.println("SHUTDOWN COMPLETED....");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
