@@ -1,0 +1,247 @@
+{
+  "matchId": 1234,
+  "teamDetails": [
+    {
+      teamId: 1234,
+      "battingDetails": {
+        playerDetails: [
+          {
+            playerId: 51,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 1,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 2,
+                fielder: {
+                  id: 83,
+                  name: 'optional'
+                },
+                bowler: {
+                  id: 83,
+                  name: 'optional'
+                },
+                isFairPlayEligible: false
+              },
+              {
+                id: 3,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 1,
+                fielder: {},
+                bowler: {
+                  id: 83,
+                  name: 'optional'
+                },
+                isFairPlayEligible: false
+              }
+            ]
+          },
+          {
+            playerId: 83,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 1,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 2,
+                fielder: {
+                  id: 83,
+                  name: 'optional'
+                },
+                bowler: {
+                  id: 83,
+                  name: 'optional'
+                },
+                isFairPlayEligible: true
+              },
+              {
+                id: 3,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 3,
+                fielder: {
+                  /*Optional for direct hit only*/
+                  id: 74,
+                  name: 'optional'
+                },
+                bowler: {},
+                isFairPlayEligible: true
+              }
+            ]
+          }
+        ],
+        bowlingDetails: [
+          {
+            playerId: 83,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 1,
+                overs: 2,
+                maiden: 1,
+                runs: 10,
+                wickets: 2
+              },
+              {
+                id: 3,
+                overs: 3,
+                maiden: 1,
+                runs: 10,
+                wickets: 4
+              }
+            ]
+          },
+          {
+            playerId: 83,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 1,
+                overs: 2,
+                maiden: 1,
+                runs: 10,
+                wickets: 2
+              },
+              {
+                id: 3,
+                overs: 3,
+                maiden: 1,
+                runs: 10,
+                wickets: 4
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "teamDetails": [
+    {
+      teamId: 4567,
+      "battingDetails": {
+        playerDetails: [
+          {
+            playerId: 21,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 2,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 2,
+                fielder: {
+                  id: 83,
+                  name: 'optional'
+                },
+                bowler: {
+                  id: 38,
+                  name: 'optional'
+                },
+                isFairPlayEligible: false
+              },
+              {
+                id: 4,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 1,
+                fielder: {},
+                bowler: {
+                  id: 52,
+                  name: 'optional'
+                },
+                isFairPlayEligible: false
+              }
+            ]
+          },
+          {
+            playerId: 74,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 2,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 2,
+                fielder: {
+                  id: 77,
+                  name: 'optional'
+                },
+                bowler: {
+                  id: 174,
+                  name: 'optional'
+                },
+                isFairPlayEligible: true
+              },
+              {
+                id: 4,
+                fours: 1,
+                sixers: 2,
+                isOut: true,
+                outType: 3,
+                fielder: {
+                  /*Optional for direct hit only*/
+                  id: 74,
+                  name: 'optional'
+                },
+                bowler: {},
+                isFairPlayEligible: true
+              }
+            ]
+          }
+        ],
+        bowlingDetails: [
+          {
+            playerId: 21,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 2,
+                overs: 2,
+                maiden: 1,
+                runs: 10,
+                wickets: 2
+              },
+              {
+                id: 4,
+                overs: 3,
+                maiden: 1,
+                runs: 10,
+                wickets: 4
+              }
+            ]
+          },
+          {
+            playerId: 74,
+            name: 'optional',
+            inningsDetails: [
+              {
+                id: 2,
+                overs: 2,
+                maiden: 1,
+                runs: 10,
+                wickets: 2
+              },
+              {
+                id: 4,
+                overs: 3,
+                maiden: 1,
+                runs: 10,
+                wickets: 4
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.groupingBy;
 public class LeaningMap {
 
 
-    public static void intStream(){
+    private static void intStream(){
         IntStream.generate(new IntSupplier() {
             int i = 0;
             @Override
