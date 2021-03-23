@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.groupingBy;
 /**
  * Created by KV on 4/6/2017.
  */
-public class LeaningMap {
+public class LearningMap {
 
 
     private static void intStream(){
@@ -44,12 +44,12 @@ public class LeaningMap {
         System.out.println(stringMap);
         System.out.println("----------------");*/
         Map<String, String> map = locales.collect(
-                Collectors.toMap(l -> l.getDisplayLanguage(),
+                Collectors.toMap(Locale::getDisplayLanguage,
                         l -> l.getDisplayLanguage(l),
                         (oldValue, newValue) -> oldValue));
 
-        System.out.println(map.entrySet().stream().count());
-        map.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + "---" + entry.getValue()));
+        System.out.println((long) map.entrySet().size());
+        map.forEach((key, value) -> System.out.println(key + "---" + value));
 
     }
 
