@@ -2,6 +2,8 @@ package com.rbc.cm.risk.impl;
 
 import com.rbc.cm.risk.Utility;
 import com.rbc.cm.risk.annotations.Sensitive;
+import com.rbc.cm.risk.dto.AccountDetails;
+import com.rbc.cm.risk.dto.Address;
 import com.rbc.cm.risk.dto.Person;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -17,7 +19,11 @@ public class ParseAnnotations {
     private static List<String> TYPES = List.of("String", "Class");
 
     static String hash(String src, String target) {
-        return StringUtils.repeat(target, src.length());
+        if(StringUtils.isBlank(src))
+            return "";
+        return src.replaceAll("[^-](?=.{2})",target);
+
+
     }
 
     static List<Method> parseAnnotation(Class<?> cls) {
@@ -37,7 +43,7 @@ public class ParseAnnotations {
         return new String(c);
     }
 
-    static void parse(Class<?> cls) {
+    static void parse(Object cls) {
         List<Method> methods = parseAnnotation(cls.getClass());
         methods.forEach(m -> {
                     String methodName = m.getName();
@@ -62,6 +68,7 @@ public class ParseAnnotations {
 
                     try {
                         String property = BeanUtils.getProperty(person, str);
+
                         BeanUtils.setProperty(person, str, hash(property, "#"));
                     } catch (Exception e) {
                         throw new RuntimeException(e);
@@ -69,18 +76,31 @@ public class ParseAnnotations {
 
                 }
         );
-        System.out.println(person.getFirstName());
-        System.out.println(person.getLastName());
-        System.out.println(person.getSsn());
+
         Map<String, String> embeddedObjects = parseMethodWithObjectAsReturn(person.getClass());
         embeddedObjects.entrySet().stream().forEach(o -> {
             try {
-                Class<?> aClass = MethodUtils.invokeMethod(person, o.getKey()).getClass();
-                parse(aClass);
+                Object o1 = MethodUtils.invokeMethod(person, o.getKey());
+                parse(o1);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         });
+
+        System.out.println(person.getFirstName());
+        System.out.println(person.getLastName());
+        System.out.println(person.getSsn());
+
+        AccountDetails accountDetails = person.getAccountDetails();
+        System.out.println(accountDetails.getAccountCode());
+        System.out.println(accountDetails.getAccountType());
+
+        Address homeAddress = person.getHomeAddress();
+        System.out.println(homeAddress.getAddress1());
+        System.out.println(homeAddress.getAddress2());
+        System.out.println(homeAddress.getCity());
+        System.out.println(homeAddress.getState());
+        System.out.println(homeAddress.getZipcode());
     }
 
 
