@@ -6,6 +6,7 @@ import com.rbc.cm.risk.dto.AccountDetails;
 import com.rbc.cm.risk.dto.Address;
 import com.rbc.cm.risk.dto.Person;
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.reflect.MethodUtils;
 
@@ -21,9 +22,7 @@ public class ParseAnnotations {
     static String hash(String src, String target) {
         if(StringUtils.isBlank(src))
             return "";
-        return src.replaceAll("[^-](?=.{2})",target);
-
-
+        return RegExUtils.replaceAll(src,"[^-](?=.{1})",target);
     }
 
     static List<Method> parseAnnotation(Class<?> cls) {
