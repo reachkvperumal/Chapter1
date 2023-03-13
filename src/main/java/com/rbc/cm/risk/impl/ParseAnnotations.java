@@ -79,8 +79,7 @@ public class ParseAnnotations {
         Map<String, String> embeddedObjects = parseMethodWithObjectAsReturn(person.getClass());
         embeddedObjects.entrySet().stream().forEach(o -> {
             try {
-                Object o1 = MethodUtils.invokeMethod(person, o.getKey());
-                parse(o1);
+                parse(MethodUtils.invokeMethod(person, o.getKey()));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
