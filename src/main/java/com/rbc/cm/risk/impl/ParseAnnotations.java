@@ -1,9 +1,8 @@
 package com.rbc.cm.risk.impl;
 
+import com.google.gson.GsonBuilder;
 import com.rbc.cm.risk.Utility;
 import com.rbc.cm.risk.annotations.Sensitive;
-import com.rbc.cm.risk.dto.AccountDetails;
-import com.rbc.cm.risk.dto.Address;
 import com.rbc.cm.risk.dto.Person;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.RegExUtils;
@@ -85,20 +84,8 @@ public class ParseAnnotations {
             }
         });
 
-        System.out.println(person.getFirstName());
-        System.out.println(person.getLastName());
-        System.out.println(person.getSsn());
+        System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(person));
 
-        AccountDetails accountDetails = person.getAccountDetails();
-        System.out.println(accountDetails.getAccountCode());
-        System.out.println(accountDetails.getAccountType());
-
-        Address homeAddress = person.getHomeAddress();
-        System.out.println(homeAddress.getAddress1());
-        System.out.println(homeAddress.getAddress2());
-        System.out.println(homeAddress.getCity());
-        System.out.println(homeAddress.getState());
-        System.out.println(homeAddress.getZipcode());
     }
 
 
