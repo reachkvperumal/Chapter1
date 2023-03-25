@@ -10,7 +10,7 @@ public class PrivateMemberExample {
 
     class NestedClass extends PrivateMemberExample {
         public void showPrivate() {
-            System.out.println("Accessing Private members of Outer class: " + i_m_private);
+            System.out.printf("Accessing Private members of Outer class: %s%n", i_m_private);
             privateMethod();
         } /* * private method trying to be overridden, * instead it’s just hiding parent class method. */
 
